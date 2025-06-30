@@ -16,7 +16,7 @@ data['Price'] = pd.to_numeric(data['Price'], errors='coerce')
 data['Seat_Availability'] = pd.to_numeric(data['Seat_Availability'], errors='coerce')
 data['Star_Rating'] = pd.to_numeric(data['Star_Rating'], errors='coerce')
 
-# ✅ FROM and TO already in DB — no extraction needed
+# FROM and TO already in DB — no extraction needed
 
 # Streamlit UI setup
 st.set_page_config(
@@ -75,7 +75,7 @@ if selected == "Search_Bus":
     from_filter = st.multiselect('Select FROM:', options=data['FROM'].dropna().unique()) if 'FROM' in data.columns else []
     to_filter = st.multiselect('Select TO:', options=data['TO'].dropna().unique()) if 'TO' in data.columns else []
 
-    # ✅ Fixed Price Range here
+    # Fixed Price Range here
     price = st.slider('Select Price Range:', min_value=95, max_value=3000, value=(95, 3000), format="₹%d")
 
     star_filter = st.slider(
